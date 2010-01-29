@@ -1,0 +1,70 @@
+<jsap>
+    <parameters>
+    
+    	<unflaggedOption>
+            <id>source</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the source spreadsheet to load the data from</help>
+        </unflaggedOption>
+        
+        <unflaggedOption>
+            <id>target</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the target spreadsheet to map the data into</help>
+        </unflaggedOption>
+        
+        <unflaggedOption>
+            <id>output</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the output spreadsheet to store the results</help>
+        </unflaggedOption>
+        
+        <flaggedOption>
+            <id>key_column</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>k</shortFlag>
+            <longFlag>key_column</longFlag>
+            <help>A mapping from one one column in the source to one in the target that is used to lookup values</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>value_column</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>v</shortFlag>
+            <longFlag>value_column</longFlag>
+			<list>true</list>
+            <listSeparator>,</listSeparator>
+            <help>One or more mappings from source columns to target columns of values to be copied over</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>format</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <defaults>
+                <string>CSV</string>
+            </defaults>
+            <shortFlag>f</shortFlag>
+            <longFlag>format</longFlag>
+            <help>The format of the spreadsheet (CSV or TSV)</help>
+        </flaggedOption>
+        
+    </parameters>
+</jsap>

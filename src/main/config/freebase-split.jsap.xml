@@ -1,0 +1,48 @@
+<jsap>
+    <parameters>
+    
+    	<unflaggedOption>
+            <id>input</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the spreadsheet to load the data from</help>
+        </unflaggedOption>
+        
+        <unflaggedOption>
+            <id>output</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the spreadsheet to write the extracted values to</help>
+        </unflaggedOption>
+        
+        <flaggedOption>
+            <id>column</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>c</shortFlag>
+            <longFlag>column</longFlag>
+            <help>The name of the column to split</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>format</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <defaults>
+                <string>CSV</string>
+            </defaults>
+            <shortFlag>f</shortFlag>
+            <longFlag>format</longFlag>
+            <help>The format of the spreadsheet (CSV or TSV)</help>
+        </flaggedOption>
+        
+    </parameters>
+</jsap>

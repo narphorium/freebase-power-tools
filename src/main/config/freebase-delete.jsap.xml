@@ -1,0 +1,93 @@
+<jsap>
+    <parameters>
+    
+    	<unflaggedOption>
+            <id>file</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the spreadsheet containing the topics to delete</help>
+        </unflaggedOption>
+        
+        <flaggedOption>
+            <id>user</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>u</shortFlag>
+            <longFlag>user</longFlag>
+            <help>Your Freebase.com user name</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>password</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>p</shortFlag>
+            <longFlag>password</longFlag>
+            <help>Your Freebase.com password</help>
+        </flaggedOption>
+		
+		<flaggedOption>
+            <id>column</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>c</shortFlag>
+            <longFlag>column</longFlag>
+            <help>The name of the id column</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>offset</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <defaults>
+                <string>0</string>
+            </defaults>
+            <shortFlag>o</shortFlag>
+            <longFlag>offset</longFlag>
+            <help>The number of rows to skip in the spreadsheet</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>limit</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>l</shortFlag>
+            <longFlag>limit</longFlag>
+            <help>The maximum number of topics to delete</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>format</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <defaults>
+                <string>CSV</string>
+            </defaults>
+            <shortFlag>f</shortFlag>
+            <longFlag>format</longFlag>
+            <help>The format of the spreadsheet (CSV or TSV)</help>
+        </flaggedOption>
+
+        <qualifiedSwitch>
+            <id>sandbox</id>
+            <required>false</required>
+            <longFlag>sandbox</longFlag>
+            <help>Delete topics from the sandbox</help>
+        </qualifiedSwitch>
+
+    </parameters>
+</jsap>

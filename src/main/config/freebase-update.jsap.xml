@@ -1,0 +1,104 @@
+<jsap>
+    <parameters>
+    
+    	<unflaggedOption>
+            <id>file</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the spreadsheet to load the data from</help>
+        </unflaggedOption>
+        
+        <flaggedOption>
+            <id>user</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>u</shortFlag>
+            <longFlag>user</longFlag>
+            <help>Your Freebase.com user name</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>password</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <shortFlag>p</shortFlag>
+            <longFlag>password</longFlag>
+            <help>Your Freebase.com password</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>query</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>q</shortFlag>
+            <longFlag>query</longFlag>
+            <help>A text file containing the MQL query to perform the updates</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>offset</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <defaults>
+                <string>0</string>
+            </defaults>
+            <shortFlag>o</shortFlag>
+            <longFlag>offset</longFlag>
+            <help>The number of rows to skip in the spreadsheet</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>limit</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>l</shortFlag>
+            <longFlag>limit</longFlag>
+            <help>The maximum number of rows to write</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>format</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <defaults>
+                <string>CSV</string>
+            </defaults>
+            <shortFlag>f</shortFlag>
+            <longFlag>format</longFlag>
+            <help>The format of the spreadsheet (CSV or TSV)</help>
+        </flaggedOption>
+
+        <qualifiedSwitch>
+            <id>sandbox</id>
+            <required>false</required>
+            <longFlag>sandbox</longFlag>
+            <help>Make writes to the sandbox</help>
+        </qualifiedSwitch>
+        
+        <flaggedOption>
+            <id>params</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <longFlag>params</longFlag>
+            <list>true</list>
+            <listSeparator>,</listSeparator>
+            <help>A list of parameter values to pass to the update query</help>
+        </flaggedOption>
+
+    </parameters>
+</jsap>

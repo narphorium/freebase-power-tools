@@ -1,0 +1,82 @@
+<jsap>
+    <parameters>
+    
+    	<unflaggedOption>
+            <id>output</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>true</required>
+            <help>The filename of the spreadsheet to write the data to</help>
+        </unflaggedOption>
+        
+        <flaggedOption>
+            <id>view</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>v</shortFlag>
+            <longFlag>view</longFlag>
+            <help>A Freebase view ID</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>query</id>
+            <stringParser>
+                <classname>FileStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>q</shortFlag>
+            <longFlag>query</longFlag>
+            <help>An MQL query file</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>offset</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <defaults>
+                <string>0</string>
+            </defaults>
+            <shortFlag>o</shortFlag>
+            <longFlag>offset</longFlag>
+            <help>The number of rows to skip in the spreadsheet</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>limit</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser> 
+            <required>false</required>
+            <shortFlag>l</shortFlag>
+            <longFlag>limit</longFlag>
+            <help>The maximum number of rows to write</help>
+        </flaggedOption>
+        
+        <flaggedOption>
+            <id>format</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <defaults>
+                <string>CSV</string>
+            </defaults>
+            <shortFlag>f</shortFlag>
+            <longFlag>format</longFlag>
+            <help>The format of the spreadsheet (CSV or TSV)</help>
+        </flaggedOption>
+
+        <qualifiedSwitch>
+            <id>sandbox</id>
+            <required>false</required>
+            <longFlag>sandbox</longFlag>
+            <help>Make writes to the sandbox</help>
+        </qualifiedSwitch>
+
+    </parameters>
+</jsap>
